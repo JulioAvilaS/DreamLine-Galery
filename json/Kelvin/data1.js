@@ -43,7 +43,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
 
     try {
-        const usersResponse = await fetch('https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user');
+        const usersResponse = await fetch('https://json-dream-line.vercel.app/user');
         const users = await usersResponse.json();
 
         function emailExistente(email, users) {
@@ -59,7 +59,7 @@ document.getElementById('form').addEventListener('submit', async function (event
 
 
 
-        const response = await fetch('https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user', {
+        const response = await fetch('https://json-dream-line.vercel.app/user', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

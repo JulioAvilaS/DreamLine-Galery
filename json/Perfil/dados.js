@@ -3,7 +3,7 @@ let perfilJson = JSON.parse(localStorage.getItem('user'))
 let id = perfilJson.id;
 
 function carregaPerfil() {
-    fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`)
+    fetch(`https://json-dream-line.vercel.app/user/${id}`)
         .then((req) => req.json())
         .then(data => {
             document.getElementById('nome1').innerHTML = `<h3>${data.nome}</h3>`;
@@ -46,7 +46,7 @@ function editaPerfil() {
     const whats = document.getElementById('whats2').value;
     const email = document.getElementById('e-mail2').value;
 
-    const url = `https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`;
+    const url = `https://json-dream-line.vercel.app/user/${id}`;
 
     // Objeto com os dados atualizados do perfil
     let perfilAtualizado = {};
@@ -93,7 +93,7 @@ function editaPerfil() {
 //Função de mudar a foto de perfil
 function atualizarFotoPerfil() {
     const novaUrlPerfil = document.getElementById('urlPerfil').value;
-    fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`, {
+    fetch(`https://json-dream-line.vercel.app/user/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -114,7 +114,7 @@ function atualizarFotoPerfil() {
 
 document.getElementById('categoria').addEventListener('change', function() {
     const selectedStyle = this.value;
-    fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`, {
+    fetch(`https://json-dream-line.vercel.app/user/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -135,7 +135,7 @@ document.getElementById('categoria').addEventListener('change', function() {
 
 function atualizarFotoPerfil() {
     const novaUrlPerfil = document.getElementById('urlPerfil').value;
-    fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`, {
+    fetch(`https://json-dream-line.vercel.app/user/${id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json'
@@ -164,7 +164,7 @@ function adicionarFoto() {
             return;
         }
 
-        fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`)
+        fetch(`https://json-dream-line.vercel.app/user/${id}`)
             .then(responseGet => {
                 if (!responseGet.ok) {
                     throw new Error('Erro ao obter dados do usuário: ' + responseGet.statusText);
@@ -174,7 +174,7 @@ function adicionarFoto() {
             .then(userData => {
                 userData.fotos.push(file);
 
-                fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`, {
+                fetch(`https://json-dream-line.vercel.app/user/${id}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -202,7 +202,7 @@ document.getElementById('btnSalvar').addEventListener('click', adicionarFoto);
 //////////------------------------------------- Parte da Giulia ------------------------------//////////
 
 function DeletaPerfil() {
-    fetch("https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/" + id, {
+    fetch("https://json-dream-line.vercel.app/user/" + id, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json'

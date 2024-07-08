@@ -13,7 +13,7 @@ window.onload = function () {
         // Função para buscar detalhes do usuário
         async function fetchRepoDetails(Id) {
             try {
-                const response = await fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${Id}`);
+                const response = await fetch(`https://json-dream-line.vercel.app/user/${Id}`);
                 if (!response.ok) {
                     throw new Error('Usuário não encontrado');
                 }
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             localStorage.setItem('estrelas', valorAvaliado);
 
             // Enviar a classificação selecionada ao servidor
-            fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user/${id}`, {
+            fetch(`https://json-dream-line.vercel.app/user/${id}`, {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json"

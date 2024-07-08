@@ -1,7 +1,7 @@
 
 
 window.onload = function () {
-    fetch("https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user")
+    fetch("https://json-dream-line.vercel.app/user")
         .then((req) => req.json())
         .then((data) => {
             document.getElementById('f1').innerHTML = `<a href="/json/Estilo/index.html?categoria=Tradicional Japanese"><img class="imagens-carrossel" src="${data[0].fotos[0]}" width="467px" height="500px"></a>`;

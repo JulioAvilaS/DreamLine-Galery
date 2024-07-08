@@ -10,7 +10,7 @@ window.onload = function () {
         // Função para buscar detalhes do usuário
         async function fetchRepoDetails(cat) {
             try {
-                const response = await fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user?categoria=${cat}`);
+                const response = await fetch(`https://json-dream-line.vercel.app/user?categoria=${cat}`);
                 if (!response.ok) {
                     throw new Error('Usuário não encontrado');
                 }
@@ -29,7 +29,7 @@ async function getJSONServer() {
     const estilos = document.getElementById('card');
     document.getElementById('nomeCat').innerHTML = `<h2 class="nomeCat">${cat}</h2>`;
     try {
-        let res = await fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user?categoria=${cat}`);
+        let res = await fetch(`https://json-dream-line.vercel.app/user?categoria=${cat}`);
         let data = await res.json();
 
         let cardsHTML = '';

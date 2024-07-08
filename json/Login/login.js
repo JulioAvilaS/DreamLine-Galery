@@ -4,7 +4,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
     const username = document.getElementById('usuario').value;
     const password = document.getElementById('senha').value;
 
-    fetch(`https://0a9369f7-ba81-44c1-a5e2-61a8dfbe46c6-00-kjwc2bpyo9up.spock.replit.dev:3001/user?email=${username}&senha=${password}`)
+    fetch(`https://json-dream-line.vercel.app/user?email=${username}&senha=${password}`)
         .then(response => response.json())
         .then(data => {
             console.log(data);
